@@ -3,7 +3,7 @@ import { Request, Response } from 'express';
 import { Review } from '../models/review';
 import { Movie } from '../models/movie';
 
-export const getReviewsByMovie = async (req: Request, res: Response) => {
+export const getReviewsByMovie = async (req: Request, res: Response): Promise<any> => {
     try {
       const { movieId } = req.params;
       
