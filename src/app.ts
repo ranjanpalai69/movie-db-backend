@@ -24,7 +24,7 @@ import mongoose from 'mongoose';
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors({ origin: '*' }));
 app.use(bodyParser.json());
 
 // Routes
@@ -35,5 +35,5 @@ app.use('/api', reviewRoutes);
 app.use((err: any, req: any, res: any, next: any) => {
     res.status(500).json({ message: 'Something went wrong', error: err.message });
   });
-  
+
 export default app;
