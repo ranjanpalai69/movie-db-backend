@@ -1,0 +1,21 @@
+"use strict";
+// import { Router } from 'express';
+// import * as reviewController from '../controllers/reviewController';
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+// const router = Router();
+// router.post('/movies/:movieId/reviews', reviewController.addReview);
+// router.get('/movies/:movieId/reviews', reviewController.getReviewsForMovie);
+// router.put('/reviews/:id', reviewController.updateReview);
+// router.delete('/reviews/:id', reviewController.deleteReview);
+// export default router;
+const express_1 = __importDefault(require("express"));
+const reviewController_1 = require("../controllers/reviewController");
+const router = express_1.default.Router();
+router.get('/movies/:movieId/reviews', reviewController_1.getReviewsByMovie);
+router.post('/movies/:movieId/reviews', reviewController_1.addReview);
+router.put('/reviews/:id', reviewController_1.editReview);
+router.delete('/reviews/:id', reviewController_1.deleteReview);
+exports.default = router;
